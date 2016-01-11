@@ -28,6 +28,8 @@
     "clean:examples": "rimraf examples/static",
     "build": "npm run clean && babel src --out-dir lib",
     "build:examples": "npm run clean:examples && babel-node ./webpack/run-webpack --config docs.config.js",
+    "build:umd": "babel-node ./webpack/run-webpack --config webpack.umd.js",
+    "build:umd:min": "babel-node ./webpack/run-webpack --config webpack.umd.min.js",
     "examples": "npm run clean:examples && babel-node ./examples/server.js",
     "lint": "eslint src test",
     "test": "npm run lint && karma start --single-run",
